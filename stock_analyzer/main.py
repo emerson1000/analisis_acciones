@@ -22,8 +22,12 @@ def main():
         logging.error("No se pudieron obtener datos de Yahoo Finance.")
         return
 
+    # Mostrar los datos brutos de las empresas
+    print("\nDatos brutos de las empresas:")
+    print(stock_data)
+
     # Analizar los datos
-    print("Analizando datos...")
+    print("\nAnalizando datos...")
     analyzed_data = analyze_stocks(stock_data)
 
     if analyzed_data is None or analyzed_data.empty:
@@ -31,7 +35,7 @@ def main():
         return
 
     # Generar recomendaciones
-    print("Generando recomendaciones...")
+    print("\nGenerando recomendaciones...")
     recommendations = generate_recommendations(analyzed_data)
 
     if recommendations.empty:
